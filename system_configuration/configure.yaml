@@ -1,0 +1,28 @@
+log_level : info # debug - info - warning - error - critical
+
+engine:
+  logger_name: Engine
+  teacher_nw:
+    training_round: 10
+    batch_size: 128
+    epochs: 5
+    fraction: 0.1
+    verbose: True
+    shuffle_per_round: True
+
+dataset:
+  logger_name: JointKDDataset
+  join_kd:
+    num_classes: 47
+    num_regions: 4
+    verbose: False
+c_reliability:
+  logger_name: C-Reliability
+  weighting_temperature: 20
+  num_regions: 3
+
+general_configure:
+  distil_epochs: 50
+  regions: 3
+  alpha: 0.01
+
